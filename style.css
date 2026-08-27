@@ -1,18 +1,20 @@
 :root {
-  --bg:     #09090f;
-  --card:   #111118;
-  --border: #1e2030;
-  --teal:   #00d4dc;
-  --teal2:  #00aacc;
-  --white:  #f0f4ff;
-  --dim:    #7a8aaa;
-  --radius: 14px;
+  --bg:      #f0f7fb;
+  --surface: #ffffff;
+  --card:    #ffffff;
+  --border:  #d6eaf5;
+  --blue:    #48bde8;
+  --blue2:   #2fa8d8;
+  --coral:   #ff6450;
+  --text:    #1a2b4a;
+  --dim:     #5a7090;
+  --radius:  14px;
 }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
   background: var(--bg);
-  color: var(--white);
+  color: var(--text);
   font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
   line-height: 1.7;
   font-size: 16px;
@@ -27,7 +29,7 @@ nav {
   align-items: center;
   justify-content: space-between;
   padding: 14px 24px;
-  background: rgba(9,9,15,.88);
+  background: rgba(255,255,255,.90);
   backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--border);
   gap: 12px;
@@ -37,17 +39,17 @@ nav {
   align-items: center;
   gap: 10px;
   text-decoration: none;
-  color: var(--white);
+  color: var(--text);
   font-weight: 700;
   font-size: 17px;
 }
 .nav-icon {
   width: 32px; height: 32px;
-  background: var(--teal);
+  background: var(--blue);
   border-radius: 8px;
   display: flex; align-items: center; justify-content: center;
-  font-size: 16px;
-  color: #000;
+  font-size: 18px;
+  color: #fff;
   font-weight: 900;
 }
 .nav-links { display: flex; align-items: center; gap: 18px; }
@@ -55,41 +57,42 @@ nav {
   color: var(--dim);
   text-decoration: none;
   font-size: 14px;
+  font-weight: 500;
   transition: color .15s;
 }
-.nav-links a:hover, .nav-links a.active { color: var(--teal); }
+.nav-links a:hover, .nav-links a.active { color: var(--blue2); }
 
 /* ── Lang toggle ── */
 .lang-btn {
-  background: rgba(0,212,220,.12);
-  border: 1px solid rgba(0,212,220,.3);
-  color: var(--teal);
+  background: var(--blue);
+  border: none;
+  color: #fff;
   border-radius: 20px;
-  padding: 5px 14px;
+  padding: 6px 16px;
   font-size: 13px;
   font-weight: 700;
   cursor: pointer;
   transition: background .15s;
   white-space: nowrap;
 }
-.lang-btn:hover { background: rgba(0,212,220,.22); }
+.lang-btn:hover { background: var(--blue2); }
 
 /* ── Hero ── */
 .hero {
   text-align: center;
   padding: 72px 24px 56px;
+  background: linear-gradient(160deg, #e0f4fd 0%, #f0f7fb 60%);
   border-bottom: 1px solid var(--border);
 }
 .hero-badge {
   display: inline-block;
-  background: rgba(0,212,220,.1);
-  border: 1px solid rgba(0,212,220,.25);
-  color: var(--teal);
+  background: var(--blue);
+  color: #fff;
   border-radius: 20px;
-  padding: 4px 14px;
+  padding: 5px 16px;
   font-size: 12px;
   font-weight: 700;
-  letter-spacing: .8px;
+  letter-spacing: .6px;
   text-transform: uppercase;
   margin-bottom: 20px;
 }
@@ -98,8 +101,9 @@ nav {
   font-weight: 800;
   letter-spacing: -.5px;
   margin-bottom: 16px;
+  color: var(--text);
 }
-.hero h1 span { color: var(--teal); }
+.hero h1 span { color: var(--blue2); }
 .hero p {
   color: var(--dim);
   max-width: 560px;
@@ -121,13 +125,14 @@ nav {
   font-weight: 800;
   letter-spacing: 1.4px;
   text-transform: uppercase;
-  color: var(--teal);
+  color: var(--blue);
   margin-bottom: 12px;
 }
 .section h2 {
   font-size: 22px;
   font-weight: 700;
   margin-bottom: 20px;
+  color: var(--text);
 }
 
 /* ── Card ── */
@@ -137,17 +142,18 @@ nav {
   border-radius: var(--radius);
   padding: 24px;
   margin-bottom: 12px;
+  box-shadow: 0 2px 12px rgba(72,189,232,.08);
 }
 .card + .card { margin-top: 10px; }
 .card-num {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 28px; height: 28px;
-  background: var(--teal);
-  color: #000;
+  width: 30px; height: 30px;
+  background: var(--blue);
+  color: #fff;
   border-radius: 50%;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 900;
   margin-bottom: 10px;
 }
@@ -155,11 +161,9 @@ nav {
   font-size: 16px;
   font-weight: 700;
   margin-bottom: 10px;
+  color: var(--text);
 }
-.card p, .card li {
-  color: var(--dim);
-  font-size: 15px;
-}
+.card p, .card li { color: var(--dim); font-size: 15px; }
 .card ul { padding-left: 18px; }
 .card li { margin-bottom: 6px; }
 
@@ -167,18 +171,15 @@ nav {
 .faq-q {
   font-size: 15px;
   font-weight: 700;
-  color: var(--teal);
+  color: var(--blue2);
   margin-bottom: 6px;
 }
-.faq-a {
-  color: var(--dim);
-  font-size: 14px;
-}
+.faq-a { color: var(--dim); font-size: 14px; }
 
 /* ── Privacy bullets ── */
 .check-list { list-style: none; padding: 0; }
 .check-list li {
-  padding: 8px 0;
+  padding: 10px 0;
   border-bottom: 1px solid var(--border);
   display: flex;
   gap: 10px;
@@ -188,21 +189,36 @@ nav {
 .check-list li:last-child { border: none; }
 .check-list li::before {
   content: "✓";
-  color: var(--teal);
+  color: var(--blue);
   font-weight: 900;
   flex-shrink: 0;
 }
 
 /* ── Notice ── */
 .notice {
-  background: rgba(0,212,220,.06);
-  border: 1px solid rgba(0,212,220,.2);
+  background: #fff8e1;
+  border: 1px solid #ffe082;
   border-radius: 10px;
   padding: 16px 20px;
-  color: var(--dim);
+  color: #7a6020;
   font-size: 14px;
   margin-top: 16px;
 }
+
+/* ── Contact button ── */
+.contact-link {
+  display: inline-block;
+  margin-top: 14px;
+  background: var(--blue);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 10px 22px;
+  border-radius: 24px;
+  transition: background .15s;
+}
+.contact-link:hover { background: var(--blue2); }
 
 /* ── Footer ── */
 footer {
@@ -211,8 +227,9 @@ footer {
   text-align: center;
   color: var(--dim);
   font-size: 13px;
+  background: var(--surface);
 }
-footer a { color: var(--teal); text-decoration: none; }
+footer a { color: var(--blue2); text-decoration: none; }
 
 /* ── Responsive ── */
 @media (max-width: 600px) {
